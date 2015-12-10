@@ -1,0 +1,8 @@
+Folders
+============
+
+-imaging
+	contains info pertaining to the capturing and deploying of Windows images (wim)
+
+-netinstall
+	contains info and configuration information pertaining to booting windows over the network and the caveats involved with doing so within a UEFI environment

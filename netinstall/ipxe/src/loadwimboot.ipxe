@@ -1,0 +1,10 @@
+#!ipxe
+
+kernel wimboot pause
+initrd boot/bcd		BCD
+initrd boot/boot.sdi	boot.sdi
+initrd sources/boot.wim	boot.wim
+imgstat
+prompt
+boot
+
