@@ -70,27 +70,7 @@ WinPE (like all Windows versions) speaks SMB/Samba natively, and does not have s
 ##Copy Install Media
 The tools necessary to do this install in an automated way can be found on any Windows 10 install media. You can create this media on a thumb drive using built in tools.
 
-TODO:
+###TODO:
 
-Windows Install Media duplication
-Answer File Creation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Windows Install Media duplication
+- Answer File Creation

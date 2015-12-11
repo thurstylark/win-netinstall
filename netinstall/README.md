@@ -10,12 +10,12 @@ This soution is comprised of the following componets:
 
 - iPXE EFI Image with embedded script
 	- Custom-built image in order to include a chainloading script
--iPXE Boot Script
+- iPXE Boot Script
 	- Instructs iPXE to chainload wimboot, and includes pointers to `BCD`, `BCD.sdi`, and `Boot.wim`
--Wimboot
+- Wimboot
 	- EFI image capable of booting a WIM image over HTTP
 	- A product of the iPXE team
--DHCPD
+- DHCPD
 	- Configuration that serves different pxe boot files to UEFI machines, than it serves BIOS machines.
 
 #iPXE
@@ -49,7 +49,7 @@ This 2nd ipxe script then chainloads wimboot and points wimboot (see below) to t
 4. `make bin-x86_64-efi/ipxe.efi EMBED=myscript.ipxe`
 	- replace `myscript.ipxe` with the location of the script you wish to embed.
 
-The resulting file (`ipxe.efi`) should be moved into the TFTP root directory. Find the efi image used in this configuration at netinstall/ipxe.efi
+The resulting file (`ipxe.efi`) should be moved into the TFTP root directory. Find the efi image used in this configuration at `netinstall/ipxe.efi`
 
 
 #Wimboot

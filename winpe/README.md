@@ -42,8 +42,8 @@ This environment is necessary in order to capture a WIM image using imagex.exe, 
 #WinPE Base Image
 ##Prerequisites
 
--Windows 10 
--Windows ADK
+- Windows 10 
+- Windows ADK
 	- Download: https://msdn.microsoft.com/en-us/windows/hardware/dn913721.aspx#adkwin10
 	- During the install process, be sure to select the following features:
 		- Deployment Tools
@@ -144,6 +144,7 @@ An Answer File is an XML file that contains settings and values that Windows use
 Windows looks for an Answer File at different locations depending on the Configuration Pass. The locations and applicible passes can be found in the table on this page: https://technet.microsoft.com/en-us/library/cc749415(v=ws.10).aspx
 
 For this configuration, the Answer File is placed in the following locations:
+
 1. The root of the WinPE media
 	-`C:\Autounattend.xml`
 	-This is to assure that WinPE is configured correctly when wpeinit is run
@@ -176,5 +177,5 @@ Timeout.exe is used in this configuration to give the user a chance to abort the
 
 ##Usage
 
-Please refer to timeout.exe's help text. Access this by opening a cmd window, and running `timeout /?`.
+Please refer to `timeout.exe`'s help text. Access this by opening a cmd window, and running `timeout /?`.
 
