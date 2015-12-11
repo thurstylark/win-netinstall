@@ -1,10 +1,10 @@
-#Net Booting
-
-##Goal
+Net Booting
+===============
+###Goal
 
 Boot a UEFI client to a Windows PE image hosted on a Linux server.
 
-##Implementation
+###Implementation
 
 This soution is comprised of the following componets:
 
@@ -18,16 +18,17 @@ This soution is comprised of the following componets:
 - DHCPD
 	- Configuration that serves different pxe boot files to UEFI machines, than it serves BIOS machines.
 
-#iPXE
-##Website: 
+iPXE
+-----------------
+###Website: 
 http://www.ipxe.org/
 
-##Summary
+###Summary
 
 iPXE is meant to be a replacement PXE firmware to be burned onto your NIC hardware, but it can also be used as a PXE loader in a similar fashion to `pxelinux.0`. This solution paired with wimboot allows us to boot WinPE over the network without needing a Windows Server environment and all the costs associated with such an environment.
 
 
-##Details
+###Details
 
 iPXE was chosen for this solution because of its ability to chainload wimboot in UEFI mode. This is necessary because WinPE CANNOT modify a GPT disk while in BIOS mode. Windows 10 *MUST* be installed in UEFI mode, and thus must use a GPT disk.
 
@@ -40,7 +41,7 @@ This 2nd ipxe script then chainloads wimboot and points wimboot (see below) to t
 >Note:
 >Changing the default behavior of iPXE is as simple as editing the 2nd script AS LONG as it can be found at `http://192.168.59.1:8080/boot.ipxe`. If this location changes, a new EFI image will need to be built.
 
-##Building the EFI Image
+###Building the EFI Image
 
 1. Follow the instructions at http://ipxe.org/download to clone the iPXE git.
 2. `cd ipxe/src`
@@ -51,20 +52,21 @@ This 2nd ipxe script then chainloads wimboot and points wimboot (see below) to t
 
 The resulting file (`ipxe.efi`) should be moved into the TFTP root directory. Find the efi image used in this configuration at `netinstall/ipxe.efi`
 
-
-#Wimboot
-##Documentation
+Wimboot
+-------------
+###Documentation
 Please refer to the following page for wimboot documentation:
 http://ipxe.org/appnote/wimboot_architecture
 
 
-#DHCP
-##Reference
+DHCP
+-------------
+###Reference
 http://ipxe.org/howto/chainloading
 (see section titled "UEFI")
 https://wiki.archlinux.org/index.php/Diskless_system#DHCP
 
-##Description
+###Description
 
 This entire solution needs to live on the same server as an existing PXE setup, but one that is geared towards BIOS machines. This means that the dhcp server needs to be able to discriminate between BIOS and UEFI machines. 
 

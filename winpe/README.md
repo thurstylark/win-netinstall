@@ -1,9 +1,10 @@
-#WinPE
-##Website
+WinPE
+=============
+###Website
 https://technet.microsoft.com/en-us/library/cc766093(v=ws.10).aspx
 
 
-##Details
+###Details
 
 Windows Preinstallation Environment (WinPE) is a tool provided by Microsoft that is designed to run on removable media, and it provides a Windows-based framework for various sysadmin tasks, most commonly capturing and applying images.
 
@@ -13,7 +14,7 @@ This is important, because this drastically limits the availible methods for boo
 
 This environment is necessary in order to capture a WIM image using imagex.exe, apply (deploy) a WIM image using imagex.exe, or (in the case of this configuration) run Windows Setup to automatically install a custom image.
 
-##Components
+###Components
 
 - WinPE_amd64 base image
 	- Created with Windows Assesment and Deployment Kit (ADK)
@@ -39,8 +40,9 @@ This environment is necessary in order to capture a WIM image using imagex.exe, 
 	- Part of any Windows installation
 
 
-#WinPE Base Image
-##Prerequisites
+WinPE Base Image
+------------------
+###Prerequisites
 
 - Windows 10 
 - Windows ADK
@@ -53,7 +55,7 @@ This environment is necessary in order to capture a WIM image using imagex.exe, 
 
 
 
-##Creating WinPE Media
+###Creating WinPE Media
 
 Follow the instructions found here:
 https://technet.microsoft.com/en-us/library/hh825109.aspx
@@ -77,7 +79,7 @@ OPTIONAL files:
 	- File that enables booting in BIOS mode
 	- *NOT RECCOMMENDED FOR PRODUCTION USE* Omit this file unless testing/troubleshooting
 
-##Customizing WinPE
+###Customizing WinPE
 
 - In a Windows environment, follow these instructions:
 	- https://technet.microsoft.com/en-us/library/hh824972.aspx
@@ -85,20 +87,21 @@ OPTIONAL files:
 	- http://wimlib.net/
 
 
-##Customizations done for this specific configuration
+###Customizations done for this specific configuration
 - Modified startnet.cmd (see below)
 - Addition of imagex.exe and timeout.exe
 
 
-#Imagex.exe
-##Reference
+Imagex.exe
+-------------
+###Reference
 https://technet.microsoft.com/en-us/library/cc748966(v=ws.10).aspx
 
-##Description
+###Description
 
 Imagex.exe is a command line tool provided with the ADK and is used for working with WIM images. This tool is necessary for capturing the base image on your target computer. While not entirely necessary for the purpose of an unattended install, it was included in this configuration to provide an easy solution for capturing images.
 
-##Accessing
+###Accessing
 
 Accessing imagex in this specific configuration can be done by following these steps:
 
@@ -109,37 +112,39 @@ Accessing imagex in this specific configuration can be done by following these s
 >Note:
 >This assumes that you have already set up your netboot environment as detailed in `netboot/README` and your WinPE environment as detailed in this document.
 
-##Usage
+###Usage
 
 Using imagex is beyond the scope of this document. Please see imaging/README for usage instructions.
 
 
-#Startnet.cmd
-##Reference
+Startnet.cmd
+----------------
+###Reference
 https://technet.microsoft.com/en-us/library/hh825191.aspx
 
-##Description
+###Description
 Startnet.cmd is a batch file that is run when WinPE boots.
 
-##Special Considerations
+###Special Considerations
 When creating startnet.cmd, it should include a line to run wpeinit. This is because wpeinit initializes hardware devices (eg. NIC, Display), and reads the Autounattend.xml file for configuration information.
 
 In this specific configuration, wpeinit is called in the first line in order to initialize network devices in preparation to mount a SMB share.
 
-##Contents
+###Contents
 You can find the contents of this script at `imaging/startnet.cmd`.
 
 
-#Answer File: Autounattend.xml
-##Reference
+Answer File: Autounattend.xml
+-------------------------------
+###Reference
 https://technet.microsoft.com/en-us/library/cc749113(v=ws.10).aspx
 
-##Description
+###Description
 
 An Answer File is an XML file that contains settings and values that Windows uses to automatically configure itself at several points in the installation process. Each of these points is called a Configuration Pass. The configuration passes of interest to us in this scope are "windowsPE" and "oobeSystem".
 
 
-##Usage
+###Usage
 
 Windows looks for an Answer File at different locations depending on the Configuration Pass. The locations and applicible passes can be found in the table on this page: https://technet.microsoft.com/en-us/library/cc749415(v=ws.10).aspx
 
@@ -155,27 +160,28 @@ For this configuration, the Answer File is placed in the following locations:
 	-`C:\Windows\System32\Sysprep`
 	-Allows configuration of the "oobeSystem" configuration pass, and keeping the Answer File in a place that the end user is less likely to find
 
-##Creation:
+###Creation:
 
 Creation of an Answer File is beyond the scope of this document. Please see imaging/README for information about creating an Answer File.
 
 
-#Setup.exe
-
+Setup.exe
+--------------
 Setup.exe does the actual work of installing our image. It is copied from the Windows 10 install media.
 
 Please see `imaging/README` for details.
 
 
-#Timeout.exe
-##Description
+Timeout.exe
+---------------
+###Description
 
 Timeout.exe is a Windows command line program that displays a countdown for a determined ammount of time.
 
 Timeout.exe is used in this configuration to give the user a chance to abort the install process in order to use other features of WinPE
 
 
-##Usage
+###Usage
 
 Please refer to `timeout.exe`'s help text. Access this by opening a cmd window, and running `timeout /?`.
 
