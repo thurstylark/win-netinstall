@@ -18,8 +18,6 @@ This soution is comprised of the following componets:
 -DHCPD
 	- Configuration that serves different pxe boot files to UEFI machines, than it serves BIOS machines.
 
-====================
-
 #iPXE
 ##Website: 
 http://www.ipxe.org/
@@ -53,14 +51,12 @@ This 2nd ipxe script then chainloads wimboot and points wimboot (see below) to t
 
 The resulting file (`ipxe.efi`) should be moved into the TFTP root directory. Find the efi image used in this configuration at netinstall/ipxe.efi
 
-=============
 
 #Wimboot
 ##Documentation
 Please refer to the following page for wimboot documentation:
 http://ipxe.org/appnote/wimboot_architecture
 
-============
 
 #DHCP
 ##Reference

@@ -38,7 +38,6 @@ This environment is necessary in order to capture a WIM image using imagex.exe, 
 	- Must be manually added to your WinPE media at `C:\Windows\System32\timeout.exe`
 	- Part of any Windows installation
 
-=============
 
 #WinPE Base Image
 ##Prerequisites
@@ -90,7 +89,6 @@ OPTIONAL files:
 - Modified startnet.cmd (see below)
 - Addition of imagex.exe and timeout.exe
 
-===========================
 
 #Imagex.exe
 ##Reference
@@ -115,7 +113,6 @@ Accessing imagex in this specific configuration can be done by following these s
 
 Using imagex is beyond the scope of this document. Please see imaging/README for usage instructions.
 
-===========================
 
 #Startnet.cmd
 ##Reference
@@ -132,7 +129,6 @@ In this specific configuration, wpeinit is called in the first line in order to 
 ##Contents
 You can find the contents of this script at `imaging/startnet.cmd`.
 
-==============================
 
 #Answer File: Autounattend.xml
 ##Reference
@@ -162,7 +158,6 @@ For this configuration, the Answer File is placed in the following locations:
 
 Creation of an Answer File is beyond the scope of this document. Please see imaging/README for information about creating an Answer File.
 
-===============================
 
 #Setup.exe
 
@@ -170,7 +165,6 @@ Setup.exe does the actual work of installing our image. It is copied from the Wi
 
 Please see `imaging/README` for details.
 
-==============================
 
 #Timeout.exe
 ##Description

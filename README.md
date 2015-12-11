@@ -14,8 +14,6 @@ For this team, the environment is completely Linux, top to bottom. Every single 
 
 The environment presented a problem as Microsoft has wrapped the deployment and management of Windows in many layers of their own environment. This proved a unique challenge as the budget was literally nonexistent, but an investment of time proved to be enough.
 
-================
-
 #Components
 This is a solution that requires many moving parts to set up, but once configured, the deployment is virtually entirely unattended. You can find documentation of this system in the following folders.
 

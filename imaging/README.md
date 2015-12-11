@@ -20,7 +20,6 @@ Of course, since Microsoft is in the picture, remaining completely FOSS goes str
 - Windows 10 Install Media
 	- setup.exe
 
-======================
 
 #Windows Environment
 
@@ -45,7 +44,6 @@ Now your template machine is "Syspreped" and ready for the image to be captured.
 
 On your tech machine, install Windows ADK and create a WinPE disk. Please refer to the instructions in `winpe/README`
 
-========================
 
 #Capture The Image
 ##Reference:
@@ -64,7 +62,6 @@ Refer to https://technet.microsoft.com/en-us/library/cc749447(v=ws.10).aspx for 
 >Note:
 >It is completely acceptable to use the source drive as the destination of the WIM image. imagex is smart enough to skip the resulting file when archiving. Sometimes it can be the best solution for capturing an image depending on the resulting size.
 
-==================================
 
 #Create Install Environment
 ##SMB share
