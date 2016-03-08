@@ -1,4 +1,0 @@
-#!ipxe
-
-dhcp
-chain http://192.168.59.1:8080/boot.ipxe
