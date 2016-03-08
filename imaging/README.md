@@ -9,7 +9,7 @@ Never fear, because it absolutely IS possible to capture and deploy an image to 
 
 Of course, since Microsoft is in the picture, remaining completely FOSS goes straight out the Windows, but you can still get by with software that is free-as-in-beer.
 
-Also, since most of this solution is licensed up the wazoo, I am unable to distribute any tools that were used in this solution. I have provided the 
+Also, since most of this solution is licensed up the wazoo, I am unable to distribute any tools that were used in this solution. 
 
 ###Components involved in this solution
  - Windows 10
