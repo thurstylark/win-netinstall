@@ -35,6 +35,8 @@ All original components of this solution are licensed under GPLv3. A copy is pro
 
 Tools used in this solution may fall under other license terms. Please see the folowing links to review the licensing for each tool used
 
+| Tool      | Link                                              |
+|-----------|---------------------------------------------------|
 | iPXE      | http://ipxe.org/licensing                         |
 | wimboot   | http://ipxe.org/wimboot#licence                   |
 | Syslinux  | http://repo.or.cz/syslinux.git/blob/HEAD:/COPYING |
